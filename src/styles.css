@@ -1,0 +1,19 @@
+.App {
+  font-family: Brusher;
+  text-align: center;
+  background-color: "#272727";
+  height: 100%;
+  overflow: hidden;
+}
+
+html,
+body {
+  overflow: hidden;
+  background-color: "#272727" !important;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Brusher";
+  src: local("Brusher"), url(./fonts/Brusher-Regular.ttf) format("truetype");
+}
