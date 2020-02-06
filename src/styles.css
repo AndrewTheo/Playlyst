@@ -15,5 +15,5 @@ body {
 
 @font-face {
   font-family: "Brusher";
-  src: local("Brusher"), url(../public/fonts/Brusher-Regular.ttf) format("truetype");
+  src: local("Brusher"), url(./fonts/Brusher-Regular.ttf) format("truetype");
 }
