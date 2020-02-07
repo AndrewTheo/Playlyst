@@ -1,5 +1,5 @@
 {
-  "name": "playlyst",
+  "name": "playlystmain",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -12,6 +12,7 @@
     "react-bootstrap": "1.0.0-beta.16",
     "react-dom": "16.12.0",
     "react-player": "1.14.2",
+    "react-scale-text": "1.2.2",
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
