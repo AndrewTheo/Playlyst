@@ -73,10 +73,12 @@ export default function MediaPlayer(props) {
           justify="center"
           spacing={50}
         >
-          <h1 className={classes.brush} style={{ fontSize: 80 }}>
-            {" "}
-            {props.displayTitle}{" "}
-          </h1>
+          <div style={{ width: "100%", textAlign: "center" }}>
+            <h1 className={classes.brush} style={{ fontSize: 80 }}>
+              {" "}
+              {props.displayTitle}{" "}
+            </h1>
+          </div>
         </Grid>
         <IconButton
           aria-label="play"
