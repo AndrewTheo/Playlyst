@@ -25,17 +25,21 @@ const useStyles = makeStyles(theme => ({
     }
   },
   iconbutton: {
-    color: "#66FCF1"
+    color: "white"
   },
   pad: {
-    paddingTop: "15%"
+    paddingTop: "5%"
+  },
+  padd: {
+    paddingTop: "5%",
+    color: "white"
   },
   buttonPadding: {
-    padding: "30px"
+    padding: "0px"
   },
   brush: {
     fontFamily: "Brusher",
-    color: "#FF652F"
+    color: "white"
   }
 }));
 
@@ -44,68 +48,104 @@ export default function MediaPlayer(props) {
   const theme = useTheme();
 
   return (
-    <Container
-      maxWidth="sm"
-      m="auto"
-      style={{ minHeight: "40vh" }}
-      className={classes.pad}
-    >
-      <Grid
-        container
-        justify="center"
-        style={{ minHeight: "10vh" }}
-        alignItems="center"
-        paddingTop={2}
+    <Container>
+      <Container>
+        <Grid
+          container
+          justify="center"
+          style={{ minHeight: "10vh" }}
+          alignItems="center"
+          paddingTop={4}
+          className={classes.padd}
+        >
+          <Grid
+            item
+            xs={12}
+            alignItems="center"
+            container
+            justify="center"
+            spacing={50}
+          >
+            <h1> PLAYLYST.</h1>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            alignItems="center"
+            container
+            justify="center"
+            spacing={50}
+          >
+            <p> Your Lysts. Distraction Free. </p>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Container
+        maxWidth="sm"
+        m="auto"
+        style={{ minHeight: "40vh" }}
+        className={classes.pad}
       >
         <Grid
-          item
-          xs={12}
-          alignItems="center"
           container
           justify="center"
-          spacing={50}
-        />
-        <Grid
-          item
-          xs={12}
+          style={{ minHeight: "10vh" }}
           alignItems="center"
-          container
-          justify="center"
-          spacing={50}
+          paddingTop={2}
+          className={classes.pad}
         >
-          <div style={{ width: "100%", textAlign: "center" }}>
-            <h1 className={classes.brush} style={{ fontSize: 80 }}>
-              {" "}
-              {props.displayTitle}{" "}
-            </h1>
-          </div>
+          <Grid
+            item
+            xs={12}
+            alignItems="center"
+            container
+            justify="center"
+            spacing={50}
+          />
+          <Grid
+            item
+            xs={12}
+            alignItems="center"
+            container
+            justify="center"
+            spacing={50}
+          >
+            <div style={{ width: "100%", textAlign: "center" }}>
+              <h1 className={classes.brush} style={{ fontSize: 80 }}>
+                {" "}
+                {props.displayTitle}{" "}
+              </h1>
+            </div>
+          </Grid>
+          <IconButton
+            aria-label="play"
+            className={classes.iconbutton}
+            onClick={props.mute}
+          >
+            <VolumeOffIcon style={{ fontSize: 30 }} />
+          </IconButton>
+          <IconButton
+            aria-label="play"
+            className={classes.iconbutton}
+            onClick={props.playPause}
+          >
+            {props.playingNow ? (
+              <PauseCircleOutlineIcon style={{ fontSize: 80 }} />
+            ) : (
+              <PlayCircleOutlineIcon style={{ fontSize: 80 }} />
+            )}
+          </IconButton>
+          <IconButton
+            aria-label="next"
+            className={classes.iconbutton}
+            onClick={props.nextSong}
+          >
+            <SkipNextIcon style={{ fontSize: 30 }} />
+          </IconButton>
         </Grid>
-        <IconButton
-          aria-label="play"
-          className={classes.iconbutton}
-          onClick={props.mute}
-        >
-          <VolumeOffIcon style={{ fontSize: 30 }} />
-        </IconButton>
-        <IconButton
-          aria-label="play"
-          className={classes.iconbutton}
-          onClick={props.playPause}
-        >
-          {props.playingNow ? (
-            <PauseCircleOutlineIcon style={{ fontSize: 80 }} />
-          ) : (
-            <PlayCircleOutlineIcon style={{ fontSize: 80 }} />
-          )}
-        </IconButton>
-        <IconButton
-          aria-label="next"
-          className={classes.iconbutton}
-          onClick={props.nextSong}
-        >
-          <SkipNextIcon style={{ fontSize: 30 }} />
-        </IconButton>
-      </Grid>
+      </Container>
     </Container>
   );
 }
+
