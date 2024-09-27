@@ -9,7 +9,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Player from "./components/Player.js";
 class App extends React.Component {
   componentDidMount() {
-    document.body.style.backgroundColor = "#272727";
+    //document.body.style.backgroundColor = "#272727";
+    document.body.style.backgroundColor = "#262626";
   }
 
   render() {
